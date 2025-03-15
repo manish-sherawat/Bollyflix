@@ -68,6 +68,19 @@ body.light-mode .header.scrolled {
     gap: 2.5rem;
 }
 
+.nav-links.hidden {
+    display: none;
+}
+
+.nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
 .nav-links a {
     color: #f0f0f0;
     text-decoration: none;
@@ -76,6 +89,8 @@ body.light-mode .header.scrolled {
     position: relative;
     transition: color 0.5s ease, transform 0.3s ease;
 }
+
+
 
 body.light-mode .nav-links a {
     color: #333;
