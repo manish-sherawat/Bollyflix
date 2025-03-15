@@ -1,0 +1,20 @@
+### Plan for Improving Website Performance
+
+1. **Modify `index.html`**:
+   - Add the `defer` attribute to the `<script src="script.js"></script>` tag to prevent blocking the rendering of the page.
+   - Optimize images by ensuring they are in web-friendly formats (e.g., WebP) and consider implementing lazy loading for images to improve initial load performance.
+   - Check if the linked CSS file (`styles.css`) is minified. If not, minify it to reduce load times.
+
+2. **Review Other HTML Files**:
+   - Apply similar changes to other HTML files (e.g., `anime.html`, `bollywood.html`, `hollywood.html`, etc.) to ensure consistency across the website.
+   - Ensure that all images in these files are optimized and consider lazy loading.
+
+3. **Minify CSS and JavaScript**:
+   - If not already done, minify the `styles.css` and `script.js` files to reduce their size and improve loading times.
+
+4. **Set Performance Budgets**:
+   - Establish performance budgets to monitor and maintain the website's performance as new content is added.
+
+### Follow-up Steps:
+- Verify the changes in the files.
+- Test the website using Google Lighthouse again to ensure that the performance issues have been resolved.
