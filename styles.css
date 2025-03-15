@@ -10,7 +10,7 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
-    transition: background 0.5s ease, color 0.5s ease;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 body.light-mode {
@@ -30,12 +30,12 @@ body.light-mode {
     align-items: center;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    transition: background 0.5s ease, box-shadow 0.5s ease;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 body.light-mode .header {
     background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(240, 159, 159, 0.1);
 }
 
 .header.scrolled {
@@ -68,10 +68,6 @@ body.light-mode .header.scrolled {
     gap: 2.5rem;
 }
 
-.nav-links.hidden {
-    display: none;
-}
-
 .nav-toggle {
     display: block;
     background: none;
@@ -80,17 +76,14 @@ body.light-mode .header.scrolled {
     cursor: pointer;
 }
 
-
 .nav-links a {
     color: #f0f0f0;
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
     position: relative;
-    transition: color 0.5s ease, transform 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
-
-
 
 body.light-mode .nav-links a {
     color: #333;
@@ -130,7 +123,7 @@ body.light-mode .nav-links a {
     gap: 5px;
     position: relative;
     overflow: hidden;
-    transition: background 0.5s ease, color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 body.light-mode .theme-toggle {
@@ -150,37 +143,6 @@ body.light-mode .theme-toggle:hover {
 .theme-toggle:active {
     transform: scale(0.95);
     transition: transform 0.1s ease;
-}
-
-.theme-toggle .ripple {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(0);
-    animation: ripple 0.6s linear;
-    pointer-events: none;
-}
-
-body.light-mode .theme-toggle .ripple {
-    background: rgba(0, 0, 0, 0.3);
-}
-
-.theme-toggle .theme-icon {
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.theme-toggle:hover .theme-icon {
-    transform: rotate(360deg);
-}
-
-.theme-toggle .theme-text {
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.theme-toggle:hover .theme-text {
-    animation: bounce 0.5s ease infinite;
 }
 
 .hero {
@@ -213,19 +175,12 @@ body.light-mode .hero {
     padding-top: 50px;
     top: 50%;
     transform: translateY(-50%);
-    animation: pulse 2s infinite;
-    transition: color 0.5s ease, text-shadow 0.5s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 body.light-mode .clock {
     color: #ff1e56;
     text-shadow: 0 0 8px rgba(255, 30, 86, 0.7);
-}
-
-@keyframes pulse {
-    0% { opacity: 0.7; }
-    50% { opacity: 1; }
-    100% { opacity: 0.7; }
 }
 
 .search-input {
@@ -237,7 +192,7 @@ body.light-mode .clock {
     color: #f0f0f0;
     font-size: 16px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: background 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 body.light-mode .search-input {
@@ -261,7 +216,7 @@ body.light-mode .search-input:focus {
 .search-input::placeholder {
     color: #a0a0a0;
     font-style: italic;
-    transition: color 0.5s ease;
+    transition: color 0.3s ease;
 }
 
 body.light-mode .search-input::placeholder {
@@ -276,7 +231,7 @@ body.light-mode .search-input::placeholder {
     transform: translateY(-50%);
     color: #ff1e56;
     font-size: 20px;
-    transition: color 0.5s ease;
+    transition: color 0.3s ease;
 }
 
 body.light-mode .search-bar::before {
@@ -294,22 +249,13 @@ body.light-mode .search-bar::before {
     background: #1c1c1c;
     border-radius: 12px;
     overflow: hidden;
-    transition: background 0.5s ease, box-shadow 0.5s ease, transform 0.3s ease;
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    opacity: 1;
 }
 
 body.light-mode .movie-card {
     background: #fff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.movie-card.hidden {
-    animation: fadeOut 0.3s ease forwards;
-}
-
-.movie-card.appear {
-    animation: fadeInUp 0.3s ease forwards;
 }
 
 .movie-card:hover {
@@ -344,7 +290,7 @@ body.light-mode .movie-card:hover {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    transition: color 0.5s ease;
+    transition: color 0.3s ease;
 }
 
 body.light-mode .movie-title {
@@ -356,7 +302,7 @@ body.light-mode .movie-title {
     gap: 0.8rem;
     font-size: 12px;
     color: #a0a0a0;
-    transition: color 0.5s ease;
+    transition: color 0.3s ease;
 }
 
 body.light-mode .movie-details {
@@ -369,7 +315,7 @@ body.light-mode .movie-details {
     border-radius: 15px;
     color: #ff1e56;
     font-weight: 500;
-    transition: background 0.5s ease, color 0.5s ease;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 body.light-mode .movie-details span {
@@ -381,7 +327,7 @@ body.light-mode .movie-details span {
     background: #0f0f0f;
     padding: 4rem 5%;
     border-top: 1px solid rgba(255, 30, 86, 0.2);
-    transition: background 0.5s ease, border-color 0.5s ease;
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 body.light-mode .footer {
@@ -400,7 +346,7 @@ body.light-mode .footer {
     margin-bottom: 1.5rem;
     font-size: 20px;
     font-weight: 600;
-    transition: color 0.5s ease;
+    transition: color 0.3s ease;
 }
 
 body.light-mode .footer-section h3 {
@@ -408,7 +354,7 @@ body.light-mode .footer-section h3 {
 }
 
 .footer-section p {
-    transition: color 0.5s ease;
+    transition: color 0.3s ease;
 }
 
 body.light-mode .footer-section p {
@@ -426,7 +372,7 @@ body.light-mode .footer-section p {
 .footer-links a {
     color: #a0a0a0;
     text-decoration: none;
-    transition: color 0.5s ease, padding-left 0.3s ease;
+    transition: color 0.3s ease, padding-left 0.2s ease;
 }
 
 body.light-mode .footer-links a {
@@ -442,7 +388,7 @@ body.light-mode .footer-links a {
     color: #f0f0f0;
     margin-right: 1rem;
     font-size: 20px;
-    transition: color 0.5s ease, transform 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 body.light-mode .social-links a {
@@ -456,49 +402,6 @@ body.light-mode .social-links a {
 
 body.light-mode .social-links a:hover {
     color: #00ddeb;
-}
-
-/* Keyframes for animations */
-@keyframes ripple {
-    0% {
-        transform: scale(0);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(4);
-        opacity: 0;
-    }
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-3px);
-    }
-}
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
 }
 
 @media (max-width: 768px) {
