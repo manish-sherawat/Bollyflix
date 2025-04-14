@@ -236,7 +236,7 @@ nav {
 }
 
 .poster-image {
-    width: 220px;
+    width: 250px;
     height: auto;
     border-radius: 5px;
 }
@@ -502,7 +502,7 @@ nav {
 
 .categories {
     max-height: 500px;
-    overflow-y: auto;
+   
 }
 
 .categories a {
