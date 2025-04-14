@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoviesMoz - Movie Information</title>
+    <title>MoviesMoz - Download latest Movies, Anime, Webseries, Tv Shows</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
 
     </style>
@@ -101,27 +102,32 @@
             <div class="movie-card" data-title="rule of the game human hunting" data-year="2023"
                 data-language="hindi english korean">
                 <div class="movie-poster">
-                    <img src="https://imgs.search.brave.com/nh_XL5n34wxjPfguytSh5Ya6IO3jCSeE3FdLFyjcw0E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9waG90/b3MuaGFuY2luZW1h/Lm5ldC9waG90b3Mv/cGhvdG8xMjk4Mjgw/LmpwZw"
-                        alt="Rule of the Game">
-                    <div class="movie-title">Rule of the Game: Human Hunting</div>
+                    <a href="Download Rule of the Game Human Hunting.html">
+                        <img src="https://imgs.search.brave.com/nh_XL5n34wxjPfguytSh5Ya6IO3jCSeE3FdLFyjcw0E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9waG90/b3MuaGFuY2luZW1h/Lm5ldC9waG90b3Mv/cGhvdG8xMjk4Mjgw/LmpwZw"
+                            alt="Rule of the Game">
+                        <div class="movie-title">Rule of the Game: Human Hunting</div>
                 </div>
                 <div class="movie-info">
                     <p>Rule of the Game: Human Hunting (2023)</p>
                     <p>Audio [Hindi-English-Korean] WEB-DL 480p [400MB] | 720p [1GB] | 1080p [2GB]</p>
                 </div>
+                </a>
             </div>
 
             <!-- Movie 4 -->
-            <div class="movie-card" data-title="the gardener" data-year="2023" data-language="hindi english spanish">
+            <div class="movie-card" data-title="Solo Leveling" data-year="2023" data-language="hindi english japanese">
                 <div class="movie-poster">
-                    <img src="/api/placeholder/240/360" alt="The Gardener">
-                    <div class="movie-title">The Gardener</div>
+                    <a href="Download Solo Leveling S01.html">
+                        <img src="https://imgs.search.brave.com/R1XOmfEQ1ZTtuTkdgGcBmBNuQJsexMoL3-Cn2gC8mcw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1Qk0yTTRZemRr/TVRFdE1qVXlZeTAw/WldZMExXSTVPRFF0/TkdSa1pXUTFNelU1/TVdNMlhrRXlYa0Zx/Y0djQC5qcGc"
+                            alt="The Gardener">
+                        <div class="movie-title">Solo Leveling (Season 1)</div>
                 </div>
                 <div class="movie-info">
-                    <p>The Gardener (Season 1)</p>
-                    <p>Multi Audio [Hindi-English-Spanish]</p>
-                    <p>WEB-DL 480p [350MB] | 720p [900MB] | 1080p [1.7GB]</p>
+                    <p>Solo Leveling (Season 1</p>
+                    <p>Multi Audio [Hindi-English-Japanese]</p>
+                    <p>WEB-DL 480p [150MB] | 720p [230MB] | 1080p [420MB]</p>
                 </div>
+                </a>
             </div>
 
             <!-- Movie 5 -->
@@ -298,154 +304,11 @@
             <li><a href="#">Site Disclaimer</a></li>
         </ul>
         <p>© 2025 MoviesMoz - All rights reserved</p>
+        <script src="scripts.js"></script>
     </footer>
 
     <script>
-        // Movie database
-        const movieDatabase = [];
 
-        // Collect all movie data from the DOM
-        document.querySelectorAll('.movie-card').forEach(card => {
-            const title = card.querySelector('.movie-title').textContent;
-            const dataTitle = card.getAttribute('data-title');
-            const dataYear = card.getAttribute('data-year');
-            const dataLanguage = card.getAttribute('data-language');
-            const poster = card.querySelector('.movie-poster img').getAttribute('src');
-            const info = Array.from(card.querySelectorAll('.movie-info p')).map(p => p.textContent);
-
-            movieDatabase.push({
-                element: card,
-                title: title,
-                searchTitle: dataTitle,
-                year: dataYear,
-                language: dataLanguage,
-                poster: poster,
-                info: info
-            });
-        });
-
-        // Close alert banner
-        document.querySelector('.alert-banner .close').addEventListener('click', function () {
-            document.querySelector('.alert-banner').style.display = 'none';
-        });
-
-        // Search functionality
-        const searchInput = document.getElementById('search-input');
-        const searchButton = document.getElementById('search-button');
-        const allMoviesContainer = document.getElementById('all-movies');
-        const searchResultsContainer = document.getElementById('search-results-container');
-        const searchResultsGrid = document.getElementById('search-results-grid');
-        const noResultsMessage = document.getElementById('no-results');
-        const searchTermDisplay = document.getElementById('search-term-display');
-
-        searchButton.addEventListener('click', function () {
-            performSearch();
-        });
-
-        searchInput.addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                performSearch();
-            }
-        });
-
-        function performSearch() {
-            const searchTerm = searchInput.value.trim().toLowerCase();
-
-            if (!searchTerm) {
-                // Reset to show all movies if search is empty
-                showAllMovies();
-                return;
-            }
-
-            // Display the search term
-            searchTermDisplay.textContent = '"' + searchTerm + '"';
-
-            // Filter movies based on search term
-            const results = movieDatabase.filter(movie => {
-                return movie.searchTitle.includes(searchTerm) ||
-                    movie.year.includes(searchTerm) ||
-                    movie.language.includes(searchTerm);
-            });
-
-            // Clear previous search results
-            searchResultsGrid.innerHTML = '';
-
-            // Show search results or no results message
-            if (results.length > 0) {
-                results.forEach(movie => {
-                    const clonedCard = movie.element.cloneNode(true);
-                    searchResultsGrid.appendChild(clonedCard);
-                });
-
-                noResultsMessage.classList.add('hidden');
-                searchResultsGrid.classList.remove('hidden');
-            } else {
-                noResultsMessage.classList.remove('hidden');
-                searchResultsGrid.classList.add('hidden');
-            }
-
-            // Show search results container and hide all movies
-            searchResultsContainer.classList.remove('hidden');
-            allMoviesContainer.classList.add('hidden');
-        }
-
-        function showAllMovies() {
-            // Hide search results container and show all movies
-            searchResultsContainer.classList.add('hidden');
-            allMoviesContainer.classList.remove('hidden');
-            searchInput.value = '';
-        }
-
-        // Reset search when clicking on logo or home
-        document.querySelector('.logo').addEventListener('click', showAllMovies);
-        document.querySelector('.nav-links a').addEventListener('click', showAllMovies);
-
-        // Pagination functionality
-        const paginationButtons = document.querySelectorAll('.pagination button');
-        paginationButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                if (this.textContent !== 'Next' && this.textContent !== '...') {
-                    paginationButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                    // Here you would typically load new content
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-                    // Reset search when changing pages
-                    showAllMovies();
-                }
-            });
-        });
-
-        // Add functionality to the nav links
-        const navLinks = document.querySelectorAll('.nav-links a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                // Here you would typically handle navigation
-                console.log('Navigating to', this.textContent);
-            });
-        });
-
-        // Category buttons functionality
-        const categoryButtons = document.querySelectorAll('.category-button');
-        categoryButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                const category = this.textContent.toLowerCase();
-                searchInput.value = category;
-                performSearch();
-            });
-        });
-
-        // Secondary nav buttons functionality
-        const secondaryNavLinks = document.querySelectorAll('.secondary-nav a');
-        secondaryNavLinks.forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                const category = this.textContent.toLowerCase();
-                searchInput.value = category;
-                performSearch();
-            });
-        });
     </script>
 </body>
 
