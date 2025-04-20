@@ -446,6 +446,7 @@ nav {
     border-radius: 50px;
     border: none;
     cursor: pointer;
+    background-color: orangered;
     color: white;
     font-weight: 500;
     transition: all 0.2s ease;
@@ -682,6 +683,11 @@ nav {
     font-size: 20px;
     color: var(--secondary);
     font-weight: 600;
+}
+
+h1{
+    color: yellow;
+    text-align: center;
 }
 
 .categories {
