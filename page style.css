@@ -218,9 +218,15 @@ nav {
     text-decoration: underline;
 }
 
+@font-face {
+    font-family: Aclonica;
+    src: url(fonts/Aclonica.ttf);
+  }
+
 .movie-title {
     font-size: 32px;
     margin-bottom: 16px;
+    font-family: Aclonica;
     color: var(--text-primary);
     font-weight: 700;
 }
