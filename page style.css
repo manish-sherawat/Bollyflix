@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Aclonica;
+    src: url(fonts/Aclonica.ttf);
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -218,13 +223,8 @@ nav {
     text-decoration: underline;
 }
 
-@font-face {
-    font-family: Aclonica;
-    src: url(fonts/Aclonica.ttf);
-  }
-
 .movie-title {
-    font-size: 32px;
+    font-size: 25px;
     margin-bottom: 16px;
     font-family: Aclonica;
     color: var(--text-primary);
